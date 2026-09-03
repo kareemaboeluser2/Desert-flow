@@ -38,7 +38,7 @@ export const FaqSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => toggleFaq(index)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D95A2B]"
+                  className="w-full text-left px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D95A2B] min-h-[52px]"
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                 >
@@ -46,7 +46,7 @@ export const FaqSection: React.FC = () => {
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
                       isOpen ? 'bg-[#D95A2B] text-white rotate-180' : 'bg-[#F3EFEA] text-gray-700'
                     }`}
                   >
@@ -57,7 +57,7 @@ export const FaqSection: React.FC = () => {
                 {isOpen && (
                   <div
                     id={`faq-answer-${index}`}
-                    className="px-6 pb-6 pt-1 text-sm text-gray-700 leading-relaxed border-t border-[#F3EFEA]"
+                    className="px-4 sm:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-[#F3EFEA]"
                   >
                     <p>{faq.answer}</p>
                   </div>
@@ -68,7 +68,7 @@ export const FaqSection: React.FC = () => {
         </div>
 
         {/* Bottom Support Prompt */}
-        <div className="mt-10 p-6 rounded-2xl bg-white border border-[#E5DFD7] text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 sm:mt-10 p-4 sm:p-6 rounded-2xl bg-white border border-[#E5DFD7] text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <span className="font-bold text-sm text-[#1C1F22] block">
               Have a specific plumbing question or need advice?
@@ -79,7 +79,7 @@ export const FaqSection: React.FC = () => {
           </div>
           <a
             href={`tel:${BUSINESS_INFO.phoneClean}`}
-            className="flex items-center gap-2 bg-[#1C1F22] hover:bg-[#282C30] text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-sm transition-colors shrink-0"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1C1F22] hover:bg-[#282C30] text-white px-5 py-3 sm:py-2.5 rounded-xl font-bold text-xs shadow-sm transition-colors shrink-0 min-h-[44px]"
           >
             <Phone className="w-3.5 h-3.5 text-[#D95A2B]" />
             <span>Call {BUSINESS_INFO.phone}</span>

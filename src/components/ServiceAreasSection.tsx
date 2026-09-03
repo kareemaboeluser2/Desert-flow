@@ -24,74 +24,108 @@ export const ServiceAreasSection: React.FC = () => {
         </div>
 
         {/* Interactive City Selector & Detail Display */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
-          {/* Left Column: City Buttons */}
-          <div className="lg:col-span-5 space-y-2.5 flex flex-col justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-1">
+          {/* Left Column: City Selector */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-2">
               Select Your Valley City:
             </span>
-            {SERVICE_AREAS.map((area, idx) => {
-              const isSelected = selectedAreaIndex === idx;
-              return (
-                <button
-                  key={area.name}
-                  type="button"
-                  onClick={() => setSelectedAreaIndex(idx)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all duration-150 flex items-center justify-between ${
-                    isSelected
-                      ? 'bg-[#1C1F22] text-white border-[#1C1F22] shadow-md'
-                      : 'bg-white text-[#1C1F22] border-[#E5DFD7] hover:border-[#D95A2B]/50 hover:bg-[#FFFDFB]'
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <MapPin
-                      className={`w-5 h-5 ${
-                        isSelected ? 'text-[#D95A2B]' : 'text-gray-400'
+
+            {/* Mobile View: Compact 2-3 Column Tappable Pills */}
+            <div className="grid grid-cols-2 xs:grid-cols-3 gap-2 lg:hidden">
+              {SERVICE_AREAS.map((area, idx) => {
+                const isSelected = selectedAreaIndex === idx;
+                return (
+                  <button
+                    key={area.name}
+                    type="button"
+                    onClick={() => setSelectedAreaIndex(idx)}
+                    className={`p-2.5 rounded-xl border transition-all duration-150 flex flex-col items-center text-center justify-center min-h-[56px] ${
+                      isSelected
+                        ? 'bg-[#1C1F22] text-white border-[#1C1F22] shadow-sm ring-2 ring-[#D95A2B]'
+                        : 'bg-white text-[#1C1F22] border-[#E5DFD7] hover:border-[#D95A2B]/40 active:bg-gray-50'
+                    }`}
+                  >
+                    <span className="font-bold text-xs sm:text-sm block">
+                      {area.name}
+                    </span>
+                    <span
+                      className={`text-[10px] font-medium mt-0.5 ${
+                        isSelected ? 'text-[#D95A2B]' : 'text-gray-500'
+                      }`}
+                    >
+                      {area.responseTime}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Desktop View: Full Stacked Cards */}
+            <div className="hidden lg:flex lg:flex-col space-y-2.5">
+              {SERVICE_AREAS.map((area, idx) => {
+                const isSelected = selectedAreaIndex === idx;
+                return (
+                  <button
+                    key={area.name}
+                    type="button"
+                    onClick={() => setSelectedAreaIndex(idx)}
+                    className={`w-full text-left p-4 rounded-xl border transition-all duration-150 flex items-center justify-between ${
+                      isSelected
+                        ? 'bg-[#1C1F22] text-white border-[#1C1F22] shadow-md'
+                        : 'bg-white text-[#1C1F22] border-[#E5DFD7] hover:border-[#D95A2B]/50 hover:bg-[#FFFDFB]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <MapPin
+                        className={`w-5 h-5 shrink-0 ${
+                          isSelected ? 'text-[#D95A2B]' : 'text-gray-400'
+                        }`}
+                      />
+                      <div>
+                        <span className="font-bold text-sm sm:text-base block">
+                          {area.name}
+                        </span>
+                        <span
+                          className={`text-xs ${
+                            isSelected ? 'text-gray-300' : 'text-gray-500'
+                          }`}
+                        >
+                          {area.responseTime}
+                        </span>
+                      </div>
+                    </div>
+                    <ArrowRight
+                      className={`w-4 h-4 shrink-0 ${
+                        isSelected ? 'text-[#D95A2B]' : 'text-gray-300'
                       }`}
                     />
-                    <div>
-                      <span className="font-bold text-sm sm:text-base block">
-                        {area.name}
-                      </span>
-                      <span
-                        className={`text-xs ${
-                          isSelected ? 'text-gray-300' : 'text-gray-500'
-                        }`}
-                      >
-                        {area.responseTime}
-                      </span>
-                    </div>
-                  </div>
-                  <ArrowRight
-                    className={`w-4 h-4 ${
-                      isSelected ? 'text-[#D95A2B]' : 'text-gray-300'
-                    }`}
-                  />
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Right Column: Selected City Card */}
-          <div className="lg:col-span-7 bg-white rounded-2xl border border-[#E5DFD7] p-6 sm:p-8 shadow-sm flex flex-col justify-between h-full">
+          <div className="lg:col-span-7 bg-white rounded-2xl border border-[#E5DFD7] p-5 sm:p-8 shadow-sm flex flex-col justify-between h-full">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-[#E5DFD7]">
+              <div className="flex items-center justify-between pb-4 border-b border-[#E5DFD7] gap-2">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#D95A2B]">
+                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#D95A2B]">
                     Active Coverage Zone
                   </span>
-                  <h3 className="text-2xl font-extrabold text-[#1C1F22] mt-0.5">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#1C1F22] mt-0.5">
                     {activeArea.name}, Arizona
                   </h3>
                 </div>
-                <div className="flex items-center gap-1.5 bg-[#FFF4EE] text-[#D95A2B] px-3 py-1 rounded-full text-xs font-bold border border-[#D95A2B]/30 shrink-0">
+                <div className="flex items-center gap-1.5 bg-[#FFF4EE] text-[#D95A2B] px-2.5 sm:px-3 py-1 rounded-full text-xs font-bold border border-[#D95A2B]/30 shrink-0">
                   <Clock className="w-3.5 h-3.5" />
                   <span>{activeArea.responseTime}</span>
                 </div>
               </div>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-5 sm:mt-6 space-y-4">
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500">
                     Key Neighborhoods & Subdivisions
@@ -101,7 +135,7 @@ export const ServiceAreasSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#F8F6F2] border border-[#EBE6DF]">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-[#F8F6F2] border border-[#EBE6DF]">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#D95A2B]">
                     Neighborhood Plumbing Profile
                   </h4>
@@ -112,16 +146,16 @@ export const ServiceAreasSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-6 mt-6 border-t border-[#E5DFD7]">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-5 sm:pt-6 mt-5 sm:mt-6 border-t border-[#E5DFD7]">
               <a
                 href={`tel:${BUSINESS_INFO.phoneClean}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#D95A2B] hover:bg-[#BF491E] text-white px-5 py-3 rounded-lg font-bold text-sm shadow-sm transition-colors"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#D95A2B] hover:bg-[#BF491E] text-white px-5 py-3 rounded-xl font-bold text-sm shadow-sm transition-colors min-h-[48px]"
               >
                 <span>Call {activeArea.name} Dispatch</span>
               </a>
               <a
                 href="#contact"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent text-[#1C1F22] hover:bg-[#F3EFEA] border border-[#E5DFD7] px-5 py-3 rounded-lg font-semibold text-sm transition-colors"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent text-[#1C1F22] hover:bg-[#F3EFEA] border border-[#E5DFD7] px-5 py-3 rounded-xl font-semibold text-sm transition-colors min-h-[48px]"
               >
                 <span>Book Diagnostic Appointment</span>
               </a>

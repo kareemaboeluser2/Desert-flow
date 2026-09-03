@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/Desert-flow/',
+    base: process.env.GITHUB_ACTIONS === 'true' ? '/Desert-flow/' : './',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

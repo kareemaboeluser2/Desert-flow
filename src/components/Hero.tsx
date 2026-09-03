@@ -18,21 +18,21 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Value Proposition & Conversion Actions */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
             
             {/* Location & Trust Eyebrow */}
-            <div className="inline-flex items-center gap-2 bg-[#282C30] border border-gray-700/60 rounded-full px-3.5 py-1.5 text-xs sm:text-sm text-gray-200">
+            <div className="inline-flex items-center gap-2 bg-[#282C30] border border-gray-700/60 rounded-full px-3 sm:px-3.5 py-1.5 text-xs sm:text-sm text-gray-200">
               <span className="w-2 h-2 rounded-full bg-[#D95A2B] animate-ping" aria-hidden="true" />
               <span className="font-semibold text-[#D95A2B]">Phoenix Metro Service</span>
               <span className="text-gray-500">•</span>
-              <span className="text-gray-300">24/7 Emergency Dispatch Active</span>
+              <span className="text-gray-300">24/7 Live Dispatch</span>
             </div>
 
             {/* Main H1 Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.2]">
               Phoenix Plumbing Done Right.{' '}
               <span className="text-[#D95A2B] block sm:inline">
                 Straightforward Diagnostics. Zero Upselling.
@@ -40,16 +40,16 @@ export const Hero: React.FC = () => {
             </h1>
 
             {/* Sub-headline / Core Description */}
-            <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl font-normal">
+            <p className="text-sm sm:text-lg text-gray-300 leading-relaxed max-w-2xl font-normal">
               Licensed residential and commercial plumbing repairs across Phoenix, Scottsdale, Tempe, and Mesa. Water heaters, electronic leak detection, and precision drain cleaning—handled directly by licensed master craftsmen with guaranteed upfront quotes.
             </p>
 
             {/* Dual Conversion CTA Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               {/* Primary Inbound Phone CTA */}
               <a
                 href={`tel:${BUSINESS_INFO.phoneClean}`}
-                className="min-h-[56px] flex items-center justify-center gap-3 bg-[#D95A2B] hover:bg-[#BF491E] active:bg-[#A33D17] text-white px-7 py-3.5 rounded-xl font-bold text-base sm:text-lg shadow-lg shadow-[#D95A2B]/20 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1C1F22]"
+                className="min-h-[52px] sm:min-h-[56px] flex items-center justify-center gap-3 bg-[#D95A2B] hover:bg-[#BF491E] active:bg-[#A33D17] text-white px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-base sm:text-lg shadow-lg shadow-[#D95A2B]/20 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1C1F22]"
                 aria-label={`Call DesertFlow Plumbing now at ${BUSINESS_INFO.phone}`}
               >
                 <Phone className="w-5 h-5 animate-pulse shrink-0" aria-hidden="true" />
@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
               {/* Secondary Online Scheduling CTA */}
               <a
                 href="#contact"
-                className="min-h-[56px] flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 active:bg-white/15 text-white border-2 border-gray-600 hover:border-gray-400 px-6 py-3 rounded-xl font-semibold text-base transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D95A2B]"
+                className="min-h-[52px] sm:min-h-[56px] flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 active:bg-white/15 text-white border-2 border-gray-600 hover:border-gray-400 px-5 sm:px-6 py-3 rounded-xl font-semibold text-base transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D95A2B]"
               >
                 <span>Schedule Diagnostic</span>
                 <span aria-hidden="true">↓</span>
@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Immediate Proof Points */}
-            <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 border-t border-[#282C30] text-xs sm:text-sm text-gray-300">
+            <div className="pt-4 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 border-t border-[#282C30] text-xs sm:text-sm text-gray-300">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#D95A2B] shrink-0" aria-hidden="true" />
                 <span>ROC Licensed & Insured</span>
@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
                 <CheckCircle2 className="w-4 h-4 text-[#D95A2B] shrink-0" aria-hidden="true" />
                 <span>Zero Commission Sales</span>
               </div>
-              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+              <div className="flex items-center gap-2 xs:col-span-2 sm:col-span-1">
                 <Clock className="w-4 h-4 text-[#D95A2B] shrink-0" aria-hidden="true" />
                 <span>Same-Day Availability</span>
               </div>
@@ -85,7 +85,7 @@ export const Hero: React.FC = () => {
 
           {/* Right Column: Architectural Diagnostic Card */}
           <div className="lg:col-span-5">
-            <div className="bg-[#282C30] border border-gray-700/80 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+            <div className="bg-[#282C30] border border-gray-700/80 rounded-2xl p-4 sm:p-6 shadow-xl relative overflow-hidden">
               
               {/* Header Badge */}
               <div className="flex items-center justify-between pb-4 border-b border-gray-700">

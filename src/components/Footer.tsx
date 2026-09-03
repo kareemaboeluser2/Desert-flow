@@ -6,11 +6,11 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#1C1F22] text-white border-t border-[#282C30] pt-14 pb-24 md:pb-12 text-sm">
+    <footer className="bg-[#1C1F22] text-white border-t border-[#282C30] pt-12 sm:pt-14 pb-32 sm:pb-28 md:pb-12 text-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-gray-800">
           
           {/* Column 1: Brand & ROC License (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
@@ -46,32 +46,32 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-gray-300">
               <li>
-                <a href="#services" className="hover:text-[#D95A2B] transition-colors">
+                <a href="#services" className="hover:text-[#D95A2B] transition-colors py-0.5 inline-block">
                   Water Heater Repair & Replacement
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#D95A2B] transition-colors">
+                <a href="#services" className="hover:text-[#D95A2B] transition-colors py-0.5 inline-block">
                   Electronic Slab Leak Detection
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#D95A2B] transition-colors">
+                <a href="#services" className="hover:text-[#D95A2B] transition-colors py-0.5 inline-block">
                   Hydro-Jetting & Drain Snaking
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#D95A2B] transition-colors">
+                <a href="#services" className="hover:text-[#D95A2B] transition-colors py-0.5 inline-block">
                   Whole-Home Repiping & Pressure Valves
                 </a>
               </li>
               <li>
-                <a href="#commercial" className="hover:text-[#D95A2B] transition-colors">
+                <a href="#commercial" className="hover:text-[#D95A2B] transition-colors py-0.5 inline-block">
                   Commercial Facility Maintenance
                 </a>
               </li>
               <li>
-                <a href="#emergency" className="hover:text-[#D95A2B] transition-colors font-semibold text-[#D95A2B]">
+                <a href="#emergency" className="hover:text-[#D95A2B] transition-colors font-semibold text-[#D95A2B] py-0.5 inline-block">
                   24/7 Emergency Triage Steps
                 </a>
               </li>
@@ -83,10 +83,10 @@ export const Footer: React.FC = () => {
             <h4 className="font-bold text-white text-xs uppercase tracking-wider text-[#D95A2B]">
               Valley Coverage
             </h4>
-            <ul className="space-y-1.5 text-xs text-gray-300">
+            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-1.5 text-xs text-gray-300">
               {SERVICE_AREAS.map((area) => (
                 <li key={area.name}>
-                  <a href="#service-areas" className="hover:text-[#D95A2B] transition-colors">
+                  <a href="#service-areas" className="hover:text-[#D95A2B] transition-colors py-0.5 inline-block">
                     {area.name}, AZ
                   </a>
                 </li>
@@ -100,10 +100,10 @@ export const Footer: React.FC = () => {
               Direct Contact
             </h4>
             
-            <div className="space-y-2 text-xs text-gray-300">
+            <div className="space-y-2.5 text-xs text-gray-300">
               <a
                 href={`tel:${BUSINESS_INFO.phoneClean}`}
-                className="flex items-center gap-2 text-white font-bold hover:text-[#D95A2B] transition-colors text-sm"
+                className="flex items-center gap-2 text-white font-bold hover:text-[#D95A2B] transition-colors text-sm py-1"
               >
                 <Phone className="w-4 h-4 text-[#D95A2B] shrink-0" />
                 <span>{BUSINESS_INFO.phone}</span>
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
 
               <a
                 href={`mailto:${BUSINESS_INFO.email}`}
-                className="flex items-center gap-2 hover:text-[#D95A2B] transition-colors"
+                className="flex items-center gap-2 hover:text-[#D95A2B] transition-colors py-0.5 break-all"
               >
                 <Mail className="w-4 h-4 text-[#D95A2B] shrink-0" />
                 <span>{BUSINESS_INFO.email}</span>
@@ -141,7 +141,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar: Copyright & Compliance */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3 text-center sm:text-left">
           <p>© {currentYear} {BUSINESS_INFO.name}. All rights reserved.</p>
           <p className="text-[11px] text-gray-400">
             Proudly independent and owner-operated in Maricopa County, Arizona.

@@ -98,38 +98,38 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
   };
 
   return (
-    <section id="contact" className="py-16 lg:py-24 bg-white border-b border-[#E5DFD7]">
+    <section id="contact" className="py-12 sm:py-16 lg:py-24 bg-white border-b border-[#E5DFD7]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Direct Contact & Business Credentials */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-5 sm:space-y-6">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D95A2B] bg-[#D95A2B]/10 px-3 py-1 rounded-full mb-3">
                 Schedule Diagnostic & Contact
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1C1F22] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#1C1F22] tracking-tight">
                 Request Service or Speak With A Plumber
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
+              <p className="mt-2.5 sm:mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
                 For immediate active water leaks or urgent hot water loss, call our dispatch line directly. For scheduled diagnostics, fill out our intake form below.
               </p>
             </div>
 
             {/* Direct Phone Highlight Card */}
-            <div className="p-6 rounded-2xl bg-[#1C1F22] text-white space-y-3 shadow-md">
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#1C1F22] text-white space-y-3 shadow-md">
+              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-gray-400">
                 Fastest Response For Urgent Needs
               </span>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-[#D95A2B] flex items-center justify-center text-white">
+                <div className="w-10 h-10 rounded-lg bg-[#D95A2B] flex items-center justify-center text-white shrink-0">
                   <Phone className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
                   <a
                     href={`tel:${BUSINESS_INFO.phoneClean}`}
-                    className="text-2xl font-extrabold text-white hover:text-[#D95A2B] transition-colors block"
+                    className="text-xl sm:text-2xl font-extrabold text-white hover:text-[#D95A2B] transition-colors block"
                   >
                     {BUSINESS_INFO.phone}
                   </a>
@@ -139,12 +139,12 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
             </div>
 
             {/* Contact Details List */}
-            <div className="space-y-4 pt-2 text-sm text-gray-700">
+            <div className="space-y-3.5 sm:space-y-4 pt-1 sm:pt-2 text-sm text-gray-700">
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#D95A2B] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-[#1C1F22] block">Service Email</span>
-                  <a href={`mailto:${BUSINESS_INFO.email}`} className="text-gray-600 hover:text-[#D95A2B]">
+                  <a href={`mailto:${BUSINESS_INFO.email}`} className="text-gray-600 hover:text-[#D95A2B] break-all">
                     {BUSINESS_INFO.email}
                   </a>
                 </div>
@@ -170,7 +170,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 pt-2">
+              <div className="flex items-start gap-3 pt-1 sm:pt-2">
                 <ShieldCheck className="w-5 h-5 text-[#D95A2B] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-[#1C1F22] block">Contractor License</span>
@@ -186,19 +186,19 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
 
           {/* Right Column: Interactive Scheduling Form */}
           <div className="lg:col-span-7">
-            <div className="bg-[#FBF9F5] border border-[#E5DFD7] rounded-3xl p-6 sm:p-8 shadow-sm">
+            <div className="bg-[#FBF9F5] border border-[#E5DFD7] rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-sm">
               
               {formStatus === 'success' ? (
-                <div className="text-center py-10 space-y-5 animate-in fade-in duration-200">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center">
-                    <CheckCircle2 className="w-10 h-10" aria-hidden="true" />
+                <div className="text-center py-8 sm:py-10 space-y-4 sm:space-y-5 animate-in fade-in duration-200">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center">
+                    <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" aria-hidden="true" />
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-extrabold text-[#1C1F22]">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-[#1C1F22]">
                       Diagnostic Request Received
                     </h3>
-                    <p className="text-sm text-gray-600 max-w-md mx-auto">
+                    <p className="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
                       Thank you, <strong className="text-[#1C1F22]">{formData.fullName}</strong>. Our on-duty dispatcher has received your request for{' '}
                       <strong className="text-[#1C1F22]">{formData.serviceCategory}</strong> during the{' '}
                       <strong className="text-[#1C1F22]">{formData.preferredTime}</strong> window.
@@ -216,26 +216,26 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                     </div>
                   </div>
 
-                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
                     <a
                       href={`tel:${BUSINESS_INFO.phoneClean}`}
-                      className="w-full sm:w-auto bg-[#D95A2B] hover:bg-[#BF491E] text-white px-6 py-3 rounded-lg font-bold text-sm shadow-sm transition-colors"
+                      className="w-full sm:w-auto bg-[#D95A2B] hover:bg-[#BF491E] text-white px-6 py-3 rounded-xl font-bold text-sm shadow-sm transition-colors min-h-[44px] flex items-center justify-center"
                     >
                       Need Immediate Arrival? Call {BUSINESS_INFO.phone}
                     </a>
                     <button
                       type="button"
                       onClick={handleReset}
-                      className="w-full sm:w-auto bg-transparent hover:bg-gray-200 text-gray-700 px-5 py-3 rounded-lg font-medium text-xs transition-colors border border-gray-300"
+                      className="w-full sm:w-auto bg-transparent hover:bg-gray-200 text-gray-700 px-5 py-3 rounded-xl font-medium text-xs transition-colors border border-gray-300 min-h-[44px]"
                     >
                       Submit Another Request
                     </button>
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" noValidate>
                   <div className="pb-2 border-b border-[#E5DFD7]">
-                    <h3 className="text-xl font-bold text-[#1C1F22]">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#1C1F22]">
                       Online Diagnostic Intake
                     </h3>
                     <p className="text-xs text-gray-500 mt-0.5">
@@ -269,7 +269,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                         placeholder="e.g. Robert Davis"
                         required
                         aria-required="true"
-                        className="w-full px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400"
+                        className="w-full px-3.5 sm:px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-base sm:text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400"
                       />
                     </div>
 
@@ -286,7 +286,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                         placeholder="e.g. (602) 555-0199"
                         required
                         aria-required="true"
-                        className="w-full px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400"
+                        className="w-full px-3.5 sm:px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-base sm:text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400"
                       />
                     </div>
                   </div>
@@ -306,7 +306,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                         placeholder="e.g. robert@gmail.com"
                         required
                         aria-required="true"
-                        className="w-full px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400"
+                        className="w-full px-3.5 sm:px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-base sm:text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400"
                       />
                     </div>
 
@@ -321,7 +321,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                         value={formData.addressOrCity}
                         onChange={handleChange}
                         placeholder="e.g. Scottsdale, AZ"
-                        className="w-full px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400"
+                        className="w-full px-3.5 sm:px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-base sm:text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400"
                       />
                     </div>
                   </div>
@@ -336,7 +336,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                       name="serviceCategory"
                       value={formData.serviceCategory}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all"
+                      className="w-full px-3.5 sm:px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-base sm:text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all"
                     >
                       {serviceOptions.map((opt) => (
                         <option key={opt} value={opt}>
@@ -356,7 +356,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                       name="preferredTime"
                       value={formData.preferredTime}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all"
+                      className="w-full px-3.5 sm:px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-base sm:text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all"
                     >
                       {timeWindows.map((win) => (
                         <option key={win} value={win}>
@@ -378,7 +378,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                       value={formData.description}
                       onChange={handleChange}
                       placeholder="e.g. Water heater is leaking from the base; floor around utility closet is damp."
-                      className="w-full px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400 resize-none"
+                      className="w-full px-3.5 sm:px-4 py-3 bg-white border border-[#D9D3CA] rounded-xl text-base sm:text-sm text-[#14171A] focus:outline-none focus:ring-2 focus:ring-[#D95A2B] focus:border-transparent transition-all placeholder:text-gray-400 resize-none"
                     />
                   </div>
 
@@ -386,11 +386,11 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ preselec
                   <button
                     type="submit"
                     disabled={formStatus === 'submitting'}
-                    className="w-full bg-[#D95A2B] hover:bg-[#BF491E] active:bg-[#A33D17] text-white py-4 rounded-xl font-bold text-base shadow-md transition-all flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D95A2B] focus-visible:ring-offset-2 disabled:opacity-75 cursor-pointer"
+                    className="w-full bg-[#D95A2B] hover:bg-[#BF491E] active:bg-[#A33D17] text-white py-3.5 sm:py-4 rounded-xl font-bold text-base shadow-md transition-all flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D95A2B] focus-visible:ring-offset-2 disabled:opacity-75 cursor-pointer min-h-[52px]"
                   >
                     {formStatus === 'submitting' ? (
                       <>
-                        <Loader2 className="w-5 h-5 animate-spin" />
+                        <Loader2 className="w-5 h-5 animate-spin shrink-0" />
                         <span>Confirming Dispatch Slot...</span>
                       </>
                     ) : (
