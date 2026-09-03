@@ -1,0 +1,6 @@
+{
+  "name": "DesertFlow Plumbing",
+  "description": "Licensed Phoenix plumbing contractor providing transparent diagnostics, 24/7 emergency calls, water heater services, and commercial maintenance across the Valley.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
